@@ -7,10 +7,10 @@ public class Cana {
 	public static void main(String[] args) {
 		
 		String arquivoEntrada = "C:\\Desenvolvimento\\CANA\\entrada.txt";
-		//String arquivoSaida = "C:\\Desenvolvimento\\CANA\\saida.txt";
+		String arquivoSaida = "C:\\Desenvolvimento\\CANA\\saida.txt";
 
 		if (true) {
-			Dinamico(arquivoEntrada);
+			Dinamico(arquivoEntrada,arquivoSaida);
 		}else {
 			Guloso();
 		}
@@ -23,21 +23,20 @@ public class Cana {
 	}
 	
 
-	private static void Dinamico(String arquivoEntrada) {
-		// TODO Auto-generated method stub
+	private static void Dinamico(String arquivoEntrada, String arquivoSaida) {
+		
 		System.out.println("****CHAMADO METODO DINAMICO****");
 		
 		//Lendo arquivos
 		
 		int quantidadeInstancias = ArquivoHandler.quatidadeInstancias(arquivoEntrada);
 		
-		System.out.println("lendo quantidade instancias = "+quantidadeInstancias);
+		//System.out.println("lendo quantidade instancias = "+quantidadeInstancias);
 		
 		int instanciasProcessadas= 0;
 		while (instanciasProcessadas<quantidadeInstancias) {
 			String entrada = ArquivoHandler.lerInstancia(arquivoEntrada,instanciasProcessadas);
-			String saida = new Dinamico().resolver("");;
-			ArquivoHandler.escreverSaida(saida);
+			new Dinamico().resolver(entrada);
 			instanciasProcessadas ++;
 		}
 		

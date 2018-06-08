@@ -7,7 +7,9 @@ public class testesdev {
 
 	public static void main(String[] args) throws IOException {
 		
-       ArquivoHandler.lerArquivo("C:\\Desenvolvimento\\CANA\\entrada.txt");
+       int i = Integer.MAX_VALUE;
+       int valor= i+1;
+       System.out.println(valor);
 		
 
 	}

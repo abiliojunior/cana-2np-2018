@@ -42,18 +42,21 @@ public class Dinamico {
 		//return resposta;
 	}
 
-	public String resolver(String string) {
-		int[] dim = {30,35,15,5,10,20,25};
+	public void resolver(String sDim) {
+		String [] sDimSplit = sDim.split(" ");
+		int[] dim= new int [sDimSplit.length];
+		
+		for (int i = 0; i < sDimSplit.length; i++) {
+			dim[i] = Integer.parseInt(sDimSplit[i]);
+		}
+		
 		ordem(dim);
 		
-//		imprimirMatriz(m);
-//		System.out.println("****+*****");
-//		imprimirMatriz(s);
+		parentizar(s,1,dim.length-1);
 		
-
-		parentrizar(s,1,5);
+		//TODO cRIAR METODO DE CALCULAR ESCALAR
+		System.out.print(" "+456321);
 		System.out.println("");
-		return "*";
 	}
 	
 	
