@@ -59,7 +59,7 @@ public class ArquivoHandler {
 			escritor.write("\n");
 			escritor.close();
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 		System.out.println(saida);
 	}

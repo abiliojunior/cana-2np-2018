@@ -52,7 +52,6 @@ public class Dinamico {
 		
 		ordem(dim);
 
-		//TODO cRIAR METODO DE CALCULAR ESCALAR
 		return parentizar(s,1,dim.length-1)+" "+m[0][dim.length-2];
 		
 	}
