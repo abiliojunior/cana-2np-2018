@@ -3,6 +3,7 @@ package utils;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,8 +50,17 @@ public class ArquivoHandler {
 	}
 
 	
-	public static void escreverSaida(String saida) {
-		// TODO Auto-generated method stub
+	public static void escreverSaida(String saida, String arquivoSaida) {
+		File arquivo = new File(arquivoSaida);
+		try {
+			FileWriter escritor = new FileWriter(arquivo,true);
+			
+			escritor.write(saida);
+			escritor.write("\n");
+			escritor.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		System.out.println(saida);
 	}
 

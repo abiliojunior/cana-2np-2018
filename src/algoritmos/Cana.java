@@ -24,7 +24,7 @@ public class Cana {
 	
 
 	private static void Dinamico(String arquivoEntrada, String arquivoSaida) {
-		
+		// TODO Auto-generated method stub
 		System.out.println("****CHAMADO METODO DINAMICO****");
 		
 		//Lendo arquivos
@@ -36,7 +36,8 @@ public class Cana {
 		int instanciasProcessadas= 0;
 		while (instanciasProcessadas<quantidadeInstancias) {
 			String entrada = ArquivoHandler.lerInstancia(arquivoEntrada,instanciasProcessadas);
-			new Dinamico().resolver(entrada);
+			String saida = new Dinamico().resolver(entrada);
+			ArquivoHandler.escreverSaida(saida,arquivoSaida);
 			instanciasProcessadas ++;
 		}
 		

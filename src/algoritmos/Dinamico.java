@@ -28,21 +28,21 @@ public class Dinamico {
 	
 	
 	
-	public void parentizar(int[][]s, int i, int j) {
-		//String resposta = "";
+	public String parentizar(int[][]s, int i, int j) {
+		String resposta = "";
 		if(i==j) {
-			System.out.print("A"+j);
+			return "A"+j;
 		}else {
-			System.out.print("(");
-			parentizar(s, i, s[i-1][j-1]);
-			parentizar(s, s[i-1][j-1]+1,j);
-			System.out.print(")");
+			resposta += "(";
+			resposta += parentizar(s, i, s[i-1][j-1]);
+			resposta += parentizar(s, s[i-1][j-1]+1,j);
+			resposta += ")";
+			return resposta;
 		}
 		
-		//return resposta;
 	}
 
-	public void resolver(String sDim) {
+	public String resolver(String sDim) {
 		String [] sDimSplit = sDim.split(" ");
 		int[] dim= new int [sDimSplit.length];
 		
@@ -51,12 +51,10 @@ public class Dinamico {
 		}
 		
 		ordem(dim);
-		
-		parentizar(s,1,dim.length-1);
-		
+
 		//TODO cRIAR METODO DE CALCULAR ESCALAR
-		System.out.print(" "+456321);
-		System.out.println("");
+		return parentizar(s,1,dim.length-1)+" "+m[0][dim.length-2];
+		
 	}
 	
 	
