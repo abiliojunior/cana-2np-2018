@@ -11,38 +11,11 @@ public class Guloso {
 			dim[i] = Integer.parseInt(sDimSplit[i]);
 		}
 		
-		metodoGMCM(dim,0,dim.length-1);
-		//metodoGuloso(dim,0,dim.length-1);
-		
-		return metodoGMCM(dim,0,dim.length-1);
+		return metodoGuloso(dim,0,dim.length-1);
 	}
 
-	private int metodoGuloso(int[] p,int i, int j) {
-		// TODO Auto-generated method stub
-		if (i==j-1) {
-			System.out.print("A"+(i+1));
-			return 0;
-		}else {
-			System.out.print("(");
-			int q = Integer.MAX_VALUE;
-			int ind = i;
-			int aux = 0;
-			for (int k = i+1; k < j-1; k++) {
-				if(p[k-1]*p[k]*p[k+1]<q) {
-					q = p[k-1]*p[k]*p[k+1];
-					ind = k;
-				}
-				aux = q + metodoGuloso(p, i, k)+metodoGuloso(p, k+1, j);
-				
-			}
-			System.out.print(")");
-			return aux;
-			
-		}
-			
-	}
-	
-	private String metodoGMCM(int[] p, int x, int y) {
+		
+	private String metodoGuloso(int[] p, int x, int y) {
 		// TODO Auto-generated method stub`
 		String resposta = "";
 		int pKey = Integer.MAX_VALUE;
@@ -73,18 +46,18 @@ public class Guloso {
 			
 			if(key==x) {
 				resposta += "(";
-				resposta += metodoGMCM(p, x, y-1);
-				resposta += metodoGMCM(p, y, y);
+				resposta += metodoGuloso(p, x, y-1);
+				resposta += metodoGuloso(p, y, y);
 				resposta += ")";
 			}else if(key==y) {
 				resposta += "(";
-				resposta += metodoGMCM(p, x, x+1);
-				resposta += metodoGMCM(p, x+1, y);
+				resposta += metodoGuloso(p, x, x+1);
+				resposta += metodoGuloso(p, x+1, y);
 				resposta += ")";
 			}else {
 				resposta += "(";
-				resposta += metodoGMCM(p, x, key);
-				resposta += metodoGMCM(p, key, y);
+				resposta += metodoGuloso(p, x, key);
+				resposta += metodoGuloso(p, key, y);
 				resposta += ")";
 			}
 		}
