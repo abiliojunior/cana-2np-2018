@@ -9,17 +9,32 @@ public class Cana {
 		String arquivoEntrada = "C:\\Desenvolvimento\\CANA\\entrada.txt";
 		String arquivoSaida = "C:\\Desenvolvimento\\CANA\\saida.txt";
 
-		if (true) {
+		if (false) {
 			Dinamico(arquivoEntrada,arquivoSaida);
 		}else {
-			Guloso();
+			Guloso(arquivoEntrada,arquivoSaida);
 		}
 		
 	   }
 
-	private static void Guloso() {
+	private static void Guloso(String arquivoEntrada, String arquivoSaida) {
 		// TODO Auto-generated method stub
 		System.out.println("****CHAMADO METODO GULOSO****");
+		//Lendo arquivos
+		
+				int quantidadeInstancias = ArquivoHandler.quatidadeInstancias(arquivoEntrada);
+				
+				System.out.println("lendo quantidade instancias = "+quantidadeInstancias);
+				
+				int instanciasProcessadas= 0;
+				while (instanciasProcessadas<quantidadeInstancias) {
+					String entrada = ArquivoHandler.lerInstancia(arquivoEntrada,instanciasProcessadas);
+					String saida = new Guloso().resolver(entrada);
+					System.out.println(saida);
+					ArquivoHandler.escreverSaida(saida,arquivoSaida);
+					instanciasProcessadas ++;
+				}
+				
 	}
 	
 
