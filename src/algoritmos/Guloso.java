@@ -14,7 +14,7 @@ public class Guloso {
 		metodoGMCM(dim,0,dim.length-1);
 		//metodoGuloso(dim,0,dim.length-1);
 		
-		return "metodo resolver guloso ";
+		return metodoGMCM(dim,0,dim.length-1);
 	}
 
 	private int metodoGuloso(int[] p,int i, int j) {
@@ -72,20 +72,20 @@ public class Guloso {
 			}
 			
 			if(key==x) {
-				System.out.print("(");
-				metodoGMCM(p, x, y-1);
-				metodoGMCM(p, y, y);
-				System.out.print(")");
+				resposta += "(";
+				resposta += metodoGMCM(p, x, y-1);
+				resposta += metodoGMCM(p, y, y);
+				resposta += ")";
 			}else if(key==y) {
-				System.out.print("(");
-				metodoGMCM(p, x, x+1);
-				metodoGMCM(p, x+1, y);
-				System.out.print(")");
+				resposta += "(";
+				resposta += metodoGMCM(p, x, x+1);
+				resposta += metodoGMCM(p, x+1, y);
+				resposta += ")";
 			}else {
-				System.out.print("(");
-				metodoGMCM(p, x, key);
-				metodoGMCM(p, key, y);
-				System.out.print(")");
+				resposta += "(";
+				resposta += metodoGMCM(p, x, key);
+				resposta += metodoGMCM(p, key, y);
+				resposta += ")";
 			}
 		}
 		return resposta;

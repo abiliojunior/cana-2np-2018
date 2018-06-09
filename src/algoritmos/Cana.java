@@ -30,6 +30,7 @@ public class Cana {
 				while (instanciasProcessadas<quantidadeInstancias) {
 					String entrada = ArquivoHandler.lerInstancia(arquivoEntrada,instanciasProcessadas);
 					String saida = new Guloso().resolver(entrada);
+					System.out.println(saida);
 					ArquivoHandler.escreverSaida(saida,arquivoSaida);
 					instanciasProcessadas ++;
 				}
