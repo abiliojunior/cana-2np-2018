@@ -15,6 +15,16 @@ public class Cana {
 			Guloso(arquivoEntrada,arquivoSaida);
 		}
 		
+//		if (args[0]=="dinamico") {
+//			Dinamico(arquivoEntrada,arquivoSaida);
+//		}else if (args[0]=="guloso"){
+//			Guloso(arquivoEntrada,arquivoSaida);
+//		}else {
+//			System.out.println("Parametro incorreto");
+//		}
+		
+		
+		
 	   }
 
 	private static void Guloso(String arquivoEntrada, String arquivoSaida) {
