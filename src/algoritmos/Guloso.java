@@ -11,16 +11,14 @@ public class Guloso {
 			dim[i] = Integer.parseInt(sDimSplit[i]);
 		}
 		
-		//return metodoGuloso(dim,0,dim.length-1);
-		System.out.println(algoritmoGuloso(dim,1,dim.length-1));
-		return "";
+		return  metodoGuloso(dim,0,dim.length-1)+" "+escalarGuloso(dim,1,dim.length-1);
 	}
 
 		
-	private int algoritmoGuloso(int[] p, int i, int j) {
-        Retorno r = new Retorno();
+	private int escalarGuloso(int[] p, int i, int j) {
+        
 		if (i == j) {
-        	System.out.print("A" + i);
+        	//System.out.print("A" + i);
             return 0;
         }
         int valor = Integer.MAX_VALUE;
@@ -34,29 +32,13 @@ public class Guloso {
             }
         }
 
-        System.out.print("(");
-        valor += algoritmoGuloso(p, i, auxK);
-        valor += algoritmoGuloso(p, auxK + 1, j);
-        System.out.print(")");
+        //System.out.print("(");
+        valor += escalarGuloso(p, i, auxK);
+        valor += escalarGuloso(p, auxK + 1, j);
+       // System.out.print(")");
 
         return valor;
     }
-	
-	
-	class Retorno{
-		int custo;
-		String cadeia;
-		
-		public void set(int custo, String Cadeia) {
-			this.custo = custo;
-			this.cadeia = cadeia;
-		}
-	}
-	
-	
-	
-	
-	
 	
 	
 	
@@ -66,10 +48,8 @@ public class Guloso {
 		int pKey = Integer.MAX_VALUE;
 		int key = 0;
 		if(x==y-1) {
-			System.out.println("Soma1");
 			return "A"+y;
 		}else if (x==(y-2)){
-			System.out.println("Soma");
 			return "("+"A"+(x+1)+"A"+y+")";
 		}else {
 			for (int i = x+1; i < y-1; i++) {
