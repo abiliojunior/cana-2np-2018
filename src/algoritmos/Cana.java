@@ -1,7 +1,13 @@
 package algoritmos;
 
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.HelpFormatter;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
+
 import utils.ArquivoHandler;
-import org.apache.commons.cli.*;
 
 public class Cana {
 
@@ -35,7 +41,7 @@ public class Cana {
 			
 						
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+			
 			formatter.printHelp("Opcao nao existe, Opcoes possiveis:", options);
 		}
 		
