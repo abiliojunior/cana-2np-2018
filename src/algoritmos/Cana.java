@@ -6,6 +6,7 @@ public class Cana {
 
 	public static void main(String[] args) {
 		
+		
 		String arquivoEntrada = "C:\\Desenvolvimento\\CANA\\entrada.txt";
 		String arquivoSaida = "C:\\Desenvolvimento\\CANA\\saida.txt";
 
