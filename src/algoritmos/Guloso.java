@@ -14,11 +14,11 @@ public class Guloso {
 		return  metodoGuloso(dim,0,dim.length-1)+" "+escalarGuloso(dim,1,dim.length-1);
 	}
 
+	
 		
 	private int escalarGuloso(int[] p, int i, int j) {
         
 		if (i == j) {
-        	//System.out.print("A" + i);
             return 0;
         }
         int valor = Integer.MAX_VALUE;
@@ -32,10 +32,10 @@ public class Guloso {
             }
         }
 
-        //System.out.print("(");
+        
         valor += escalarGuloso(p, i, auxK);
         valor += escalarGuloso(p, auxK + 1, j);
-       // System.out.print(")");
+      
 
         return valor;
     }
@@ -43,7 +43,7 @@ public class Guloso {
 	
 	
 	private String metodoGuloso(int[] p, int x, int y) {
-		// TODO Auto-generated method stub`
+		
 		String resposta = "";
 		int pKey = Integer.MAX_VALUE;
 		int key = 0;

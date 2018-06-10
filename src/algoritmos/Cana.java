@@ -1,35 +1,51 @@
 package algoritmos;
 
 import utils.ArquivoHandler;
+import org.apache.commons.cli.*;
 
 public class Cana {
 
 	public static void main(String[] args) {
-		
-		
+				
 		String arquivoEntrada = "C:\\Desenvolvimento\\CANA\\entrada.txt";
 		String arquivoSaida = "C:\\Desenvolvimento\\CANA\\saida.txt";
 
-		if (false) {
-			Dinamico(arquivoEntrada,arquivoSaida);
-		}else {
-			Guloso(arquivoEntrada,arquivoSaida);
+		Options options = new Options();
+	      options.addOption("d", "dinamico", false, "Usando metodo dinamico")
+	         .addOption("g", "guloso", false, "Usando metodo guloso")
+	         .addOption("gt", "guloso top-botton", false, "Usando metodo guloso botton");
+
+	      HelpFormatter formatter = new HelpFormatter();
+	      
+	  
+	      CommandLineParser parser = new DefaultParser();
+	      try {
+	    	  
+			CommandLine cmd = parser.parse( options, args);
+			
+			if(cmd.hasOption("d")) {
+				Dinamico(arquivoEntrada,arquivoSaida);
+			}else if(cmd.hasOption("g")) {
+				Guloso(arquivoEntrada,arquivoSaida);
+			}else if(cmd.hasOption("gt")) {
+				System.out.println("METODO NÃO IMPLEMENTADO");
+			}else {
+				formatter.printHelp("Opcao nao existe, Opcoes possiveis:", options);
+			}
+			
+						
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			formatter.printHelp("Opcao nao existe, Opcoes possiveis:", options);
 		}
 		
-//		if (args[0]=="dinamico") {
-//			Dinamico(arquivoEntrada,arquivoSaida);
-//		}else if (args[0]=="guloso"){
-//			Guloso(arquivoEntrada,arquivoSaida);
-//		}else {
-//			System.out.println("Parametro incorreto");
-//		}
 		
 		
 		
 	   }
 
 	private static void Guloso(String arquivoEntrada, String arquivoSaida) {
-		// TODO Auto-generated method stub
+		
 		System.out.println("****CHAMADO METODO GULOSO****");
 		//Lendo arquivos
 		
@@ -49,14 +65,12 @@ public class Cana {
 	
 
 	private static void Dinamico(String arquivoEntrada, String arquivoSaida) {
-		// TODO Auto-generated method stub
+		
 		System.out.println("****CHAMADO METODO DINAMICO****");
 		
 		//Lendo arquivos
 		
 		int quantidadeInstancias = ArquivoHandler.quatidadeInstancias(arquivoEntrada);
-		
-		//System.out.println("lendo quantidade instancias = "+quantidadeInstancias);
 		
 		int instanciasProcessadas= 0;
 		while (instanciasProcessadas<quantidadeInstancias) {
