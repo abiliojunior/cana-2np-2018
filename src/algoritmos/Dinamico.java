@@ -44,10 +44,10 @@ public class Dinamico {
 
 	public String resolver(String sDim) {
 		String [] sDimSplit = sDim.split(" ");
-		int[] dim= new int [sDimSplit.length];
+		int[] dim= new int [sDimSplit.length-1];
 		
-		for (int i = 0; i < sDimSplit.length; i++) {
-			dim[i] = Integer.parseInt(sDimSplit[i]);
+		for (int i = 0; i < sDimSplit.length-1; i++) {
+			dim[i] = Integer.parseInt(sDimSplit[i+1]);
 		}
 		
 		ordem(dim);
@@ -66,5 +66,4 @@ public class Dinamico {
 		}
 	}
 
-	
 }
