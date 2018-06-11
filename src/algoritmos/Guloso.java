@@ -72,7 +72,7 @@ public class Guloso {
 			if(key==x) {
 				resposta += "(";
 				resposta += metodoGuloso(p, x, y-1);
-				resposta += metodoGuloso(p, y, y);
+				resposta += metodoGuloso(p, y-1, y);
 				resposta += ")";
 			}else if(key==y) {
 				resposta += "(";
