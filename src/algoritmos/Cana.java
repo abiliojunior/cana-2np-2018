@@ -18,7 +18,7 @@ public class Cana {
 	   }
 
 	private static void Guloso(String arquivoEntrada, String arquivoSaida) {
-		// TODO Auto-generated method stub
+		
 		System.out.println("****CHAMADO METODO GULOSO****");
 		//Lendo arquivos
 		
