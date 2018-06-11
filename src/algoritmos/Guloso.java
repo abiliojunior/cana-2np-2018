@@ -5,10 +5,10 @@ public class Guloso {
 	public String resolver(String entrada) {
 		
 		String [] sDimSplit = entrada.split(" ");
-		int[] dim= new int [sDimSplit.length];
+		int[] dim= new int [sDimSplit.length-1];
 		
-		for (int i = 0; i < sDimSplit.length; i++) {
-			dim[i] = Integer.parseInt(sDimSplit[i]);
+		for (int i = 0; i < sDimSplit.length-1; i++) {
+			dim[i] = Integer.parseInt(sDimSplit[i+1]);
 		}
 		
 		return  metodoGuloso(dim,0,dim.length-1)+" "+escalarGuloso(dim,1,dim.length-1);
